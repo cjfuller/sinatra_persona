@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Colin J. Fuller"]
   spec.email         = ["cjfuller@gmail.com"]
   spec.summary       = %q{Persona verifier for Sinatra}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/cjfuller/sinatra_persona"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
