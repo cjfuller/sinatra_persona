@@ -23,7 +23,7 @@ Or install it yourself as:
 For a classic-style app:
 ```ruby
 require 'sinatra_persona'
-enable :sessiona
+enable :sessions
 ```
 
 For a modular-style app:
@@ -34,7 +34,7 @@ require 'sinatra_persona'
 class MyApp < Sinatra::Base
   enable :sessions
   register Sinatra::Persona
-  [...]
+  # Application code here
 end
 ```
 
