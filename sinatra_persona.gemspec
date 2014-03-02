@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "sinatra_persona"
   spec.version       = SinatraPersona::VERSION
   spec.authors       = ["Colin J. Fuller"]
-  spec.email         = ["colinfuller@khanacademy.org"]
+  spec.email         = ["cjfuller@gmail.com"]
   spec.summary       = %q{Persona verifier for Sinatra}
   spec.homepage      = ""
   spec.license       = "MIT"
@@ -22,3 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "haml"
   spec.add_dependency "sinatra"
 end
+
+

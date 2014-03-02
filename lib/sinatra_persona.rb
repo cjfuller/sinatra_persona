@@ -10,6 +10,7 @@ module Sinatra
       app.post '/auth/persona_verifier' do
         assertion = params[:assertion]
         audience = request.host_with_port
+        verifier_uri = settings.respond_to? :persona_verifier_uri ? settings.persona_verifier_uri : nil
         email = ::Persona::Verifier.verify_assertion(assertion, audience)
         if email.nil?
           session.delete(:persona)
@@ -37,7 +38,7 @@ module Sinatra
       end
 
       def clear_persona!
-        session[:persona]
+        session[:persona] = nil
       end
 
       def persona_button
