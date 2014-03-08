@@ -5,13 +5,14 @@ require 'sinatra/base'
 
 module Sinatra
   module Persona
+
     def self.registered(app)
       app.helpers Persona::Helpers
       app.post '/auth/persona_verifier' do
         assertion = params[:assertion]
         audience = request.host_with_port
-        verifier_uri = settings.respond_to? :persona_verifier_uri ? settings.persona_verifier_uri : nil
-        email = ::Persona::Verifier.verify_assertion(assertion, audience)
+        verifier_uri = settings.respond_to?(:persona_verifier_uri) ? settings.persona_verifier_uri : nil
+        email = ::Persona::Verifier.verify_assertion(assertion, audience, verifier_uri: verifier_uri)
         if email.nil?
           session.delete(:persona)
         else
